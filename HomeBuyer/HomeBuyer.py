@@ -19,14 +19,34 @@ df = pd.read_csv("C:\purvi_me\machine-learning\simplilearn\hands-on-assignment\H
 print(df.head())
 print(df.describe())
 
+print("Checking linearity between age and purchasing by scatter plot")
+#Age  vs  Purchased
+plt.scatter(df.Age,df.Purchased)
+plt.xlabel("Age")
+plt.ylabel("Purchased")
+plt.title("Age vs Purchased")
+plt.show()
+
+print("No linear relationship with Age")
+
+print("Checking linearity between Estimated salary and purchasing by scatter plot")
+#EstimatedSalary vs Purchased
+plt.scatter(df.EstimatedSalary,df.Purchased)
+plt.xlabel("salary")
+plt.ylabel("Purchased")
+plt.title("Estimated salary vs Purchased")
+plt.show()
+
+print("No linear relationship with Estimated salary")
+
 X=df.iloc[:,0:2]
 y=df.iloc[:,-1]
 
 x1=df.iloc[:,0:1]
-style.use('classic')
+'''style.use('classic')
 
 plt.plot(x1,y,color='c', linestyle='-', linewidth=2.5)
-plt.show()
+plt.show()'''
 #print("x = {} \n\n y= {} ".format(X,y))
 m = KNeighborsClassifier()
 NBModel = GaussianNB()
